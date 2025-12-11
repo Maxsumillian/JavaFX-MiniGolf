@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<Pane fx:id="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.golf.LevelController">
+    <Canvas fx:id="levelCanvas" height="660.0" width="800" />
+    <ToolBar layoutY="660.0" maxHeight="40" minHeight="40" prefHeight="40.0" prefWidth="800.0">
+        <items>
+            <Button fx:id="Save" disable="true" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#Save" prefHeight="25.0" prefWidth="115.0" text=" 💾 Save Score" />
+            <TextField fx:id="NameField" disable="true" layoutX="138.0" layoutY="90.0" prefHeight="25.0" prefWidth="341.0" promptText="Enter Player Name: 'Currently In Development' " />
+        </items>
+    </ToolBar>
+    <ProgressIndicator layoutX="373.0" layoutY="319.0" progress="0.0" />
+    <CheckBox layoutX="96.0" layoutY="104.0" mnemonicParsing="false" text="CheckBox" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="399.0" layoutX="182.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="399.0" layoutX="249.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="399.0" layoutX="557.0" layoutY="76.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="399.0" layoutX="479.0" layoutY="139.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="399.0" layoutX="323.0" layoutY="131.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="399.0" layoutX="400.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" width="26.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SANDYBROWN" height="40.0" layoutX="29.0" layoutY="620.0" stroke="BLACK" strokeType="INSIDE" width="743.0" />
+   <Circle fill="BLUE" layoutX="229.0" layoutY="166.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="BLUE" layoutX="300.0" layoutY="450.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="BLUE" layoutX="453.0" layoutY="187.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="BLUE" layoutX="532.0" layoutY="441.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" />
+</Pane>

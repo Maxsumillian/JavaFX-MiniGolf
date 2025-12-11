@@ -1,0 +1,143 @@
+Java Golf ⛳️ — Final Project Summary
+11/20/2025
+Maximillian Yang
+
+🏌️Summary
+
+This is a mini-golf game I built for my Java final.
+Pretty self-explanatory — just have some fun with it. 🙂
+since some degree of AI was allowed I planned to make this as polish as I could and make sure my personal twist and
+decisions are the key takeaways and how I used Ai as a learning tool.
+
+Honestly I would refactor this code again again with what I learned, but I am on a time restriction and am more focus on
+adding features and tyring to clean up my comments
+
+
+=========================================
+
+New Things I Learned
+
++ public vs private variables
+    Public variables can be accessed and changed from outside a class, while private variables require getters/setters.
+
++ Reading and writing files
+    How to create folders, store files, and parse simple data.
+    (Important note: don’t save in resources/ because packaged JARs can’t be modified.)
+
++ Maven
+    Maven automatically manages dependencies and libraries.
+
++ Gson
+    How to install and use Google’s Gson library to read/write JSON files in JavaFX.
+
++ FXML & SceneBuilder
+
++ What a controller is and how it connects to FXML.
+
++ How to bind buttons and actions directly in SceneBuilder.
+
++ Communicating between windows and passing data.
+
++ Why initialization order matters
+    Timing issues when variables aren’t set before use.
+
++ Using FXML controllers to build a level editor
+    FXML → Loader → Controller → Objects → GameCanvas → Game → Display chain.
+
++ Stylesheets & CSS
+
++ Enums
+
++ Dynamic ListView creation
+
++ Sound importing and playback
+
++ JSON object loading & saving
+    Including dealing with polymorphism limitations.
+
++ Basic debugger use to find some bugs and follow logic
+
++ intro to listening (ai assisted)
+
++ intro to Manager Classes (ai assisted)
+
+======================================================================
+Problems and Solutions
+
+**** Saving & Loading Levels ****
+
+Problem: JSON doesn’t support polymorphism directly.
+Solution:
+    Learn proper file IO (don’t write into JAR resources).
+    Create a dedicated “levels” folder next to src.
+    Save level data as JSON.
+    Separate polymorphic lists by type, save individually, then recombine on load.
+    Create a LevelData container to organize everything cleanly.
+
+**** Animation and Physics ****
+
+** Ball Movement **
+Draw the ball on a canvas (must be called frequently).
+Update its position each frame.
+Use a AnimationTimer as a game loop.
+Store velocity in x and y and increment each frame.
+
+* Friction *
+Velocity is decreased every frame to simulate slowing down.
+Eventually this supports friction multipliers for sand traps, etc.
+
+* Wall Collision *
+Rectangular walls only (to avoid rotation math complexity).
+Each frame:
+    Loop through all wall objects.
+    Compare ball’s x/y to wall boundaries.
+    Handle collision accordingly.
+    Not perfect for corners, but “good enough” for gameplay.
+
+*** initializing ***
+
+Problem: Crashes when hole spawn coordinates didn’t exist yet (when using random hole positions).
+Fix: Initialize hole parameters after the scene loads to avoid null pointers.
+
+**** UI Design ****
+
+SceneBuilder makes layout easier.
+Controllers handle input logic cleanly.
+Passing data between windows via static stages (fine for this project since security isn’t a concern).
+
+**** Connecting FXML to Level Data ****
+
+I can grab filenames from FXML, feed them into my level-load function, and retrieve canvas elements and controls directly.
+This means I can build actual levels in SceneBuilder.
+
+==============================================================================
+^^^^^^^^^^^^^ Best Practices Learned ^^^^^^^^^^^^^
+
++ Using private variables with getters/setters.
+
++ Establishing a proper class hierarchy with inheritance and polymorphism.
+    Cleaner game-object structure.
+
++ JSON & Polymorphism Issue
+JSON can’t automatically load polymorphic objects, so:
+    Separate lists by subtype.
+    Store them individually.
+    Load them individually.
+    Recombine into a master ArrayList<GameObject>.
+This makes the system modular and future-proof.
+
+===================================================================================
+^^^^^^^^^^^^^ Notes on Level Editor ^^^^^^^^^^^^^
+I realized I could use SceneBuilder as a level editor by:
+
+Placing shapes (Rectangles, Circles, Ellipses, etc).
+Mapping each shape type to a game object (wall, sand, water, ball start, hole).
+Mirroring them into my game object classes at runtime.
+Rhis avoids building my own custom drag-drop editor from scratch.
+
+===================================================
+
+I received assistance from ChatGPT in designing the focus-tracking system for multiple game windows.
+The resulting approach uses a GameManager that stores the active game and notifies interested controllers through an interface-based listener pattern.
+I understand the overall flow: when a viewport gains focus, it informs the manager, which then triggers updates in UI components such as the main menu.
+ChatGPT helped with the structural design and implementation details.

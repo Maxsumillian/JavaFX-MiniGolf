@@ -1,0 +1,202 @@
+Java Golf
+11/20/2025
+Maximillian Yang
+
+Summary
+
+Mini Golf I Made for My Java Final
+Pretty self-explanatory just have some fun ;)
+======================
+
+features
+
+full mini golf game
+ball physics
+    (near hole it drags the ball in)
+    (rectangular/circle) walls, sand-traps, water
+play/edit modes
+drag objects on edit mode
+display arrow on ball controls
+css style change
+save/load files from list(double click)
+file refresh and delete selected
+(QoL UI)
+    quit program on exit main menu
+    open/bring window toFront on edit/play mode selector
+    Display Current Score (Based on activate play window)
+    live updates on overall score (premade levels only)
+Basic Anti Cheat (on edit replace score)
+Reset Ball Position on SpaceBar
+Sound Bar
+
+
+
+=========================================
+
+NEWSTUFF I Had To Learn
+
++ private vs public variable. public can be accessed and changed outside of class while private requires gets and sets to change
+
++ How to Write and store files on a new Folder
++ Where to store files and how to read/parse and Write simple data that can be stored in files
+
++ Maven is a manager that automatically finds and downloads dependencies and manages libraries for you
++ How to Install Gson Library from Google to read and write json Files from javaFX
+
++ Learning how to use FXML and a sceneBuilder ( Note: Similar to HTML )
++ what is a fxml controller? (it connects with the fxml files and dictates what buttons and other stuff do)
++ how to link buttons and actions from fxml to controller (note: this is very nice how I can call the controller function and bind the action directly with fxml)
+
++ how to communicate between windows and change data/display information
+
++ why initializing the game is important when setting up variables that don't exist yet timing error
+
++ How A controller for fxml can be used to retrieve and store data for level creation
+FXML > root-Loader > Controller > objects needed > Gc > game > display
+
++ How to use stylesheets and css
+
++ How to make Enums and use Enums
+
++ How to Make and populate a Dynamic List-View
+
++ How to import and play sounds
+
++ loading and unloading objects into json
+
++ Basic controls of debugger tool
+
+========================================
+
+Problems and solutions
+
+How to load level from files and how to create and save files.
+
+Step 1) Learn where to read and write Files Do not save in the resources file (once the app is packaged the JAR cannot be modified)
+Step 2) Make a Folder for storing level data that can be written or read like "levels" in-side your project folder next to your "src" folder
+Step 3) Files will be stored as json to store variables such as classes location etc.
+Step 4) Get user input to store and write data to load later when needed.
+... needs more work
+
+Animation and Physics as a whole :|
+
+step 1) figuring out how to display a ball (just print/Draw to your canvas, Note: make sure this is a method will need to be called a-lot)
+step 2) how to draw a moving ball? (update its location every second and increment its position somehow)
+step 3) how to update its location every second? (use a game loop or an animation timer part of java library)
+step 4) how to decide to increment its movement? (make sure the ball has settable position and also make sure you can set a velocity for it)
+
+Physics Part 2 walls! and friction
+
+Walls!
+walls are dynamic and varied by nature so its collision detection has to be more robust than the simple canvas size check
+this requires finding the points of contact and conditions when the ball might hit those contact points besides this i also
+needed a ways to scale the walls and be able to check all collisions for in all frames so i used an enhanced for loop to
+check an arraylist of wall objects to compare x y length height positions it doesn't have any corner detections, but it works closely enough,
+and it also cannot be rotated or at an angel i would probably have to do more math for that so i decided only rectangles :)
+I opted for a simple solution of dynamically setting the walls in an array list
+
+Ball movement?
+step 1) identify how to increment your ball position (you would name a variable such as velocity to add to its x and y position every frame)
+step 2) adding velocity every frame works, but it's all linear motion it would never slow down to get this slow down or friction
+property we need to take the velocity and decrement it so the ball slows down over time. (eventually for things like a sand trap I will have a friction multiplier that gets applied to the velocity decrementing)
+
+
+hole issues
+program crashed only for randomized hole spawns
+Step 1) When setting random hole spawns you must initialize first so the program can run it later so you don't get a null pointer error
+this is because settings the position of a hole whose cords don't exist leads to a crash but by using an initialized function with a slight delay you can run your game then set teh parameters
+
+
+How to make Good UI?
+
+step 1) pick up a scene builder (this is a program or plugin that allows live editing and formating of windows and controls)
+step 2) understand fxml needs a controller and that controller is able to handle your inputs easily for you.
+step 3) understanding how to change/Carry Data from one Window to another(In my case I Set Stages as public static you cna alter and change from other controllers very helpful)
+(hacking and security are not important to my program, so I may not be using best practice from a security poi, but it works for what I need it to)
+(Well i actaully did end up changing it and it now uses a Mode manager to communicate between all the controllers)
+
+CONNECTING FXML TO MY LEVELS!!!!
+I can grab the file name and send it to my open level method that reads the files grabs the controller for the files and
+is able to get the canvas and controls within the file to read location!!! what this means is I can build levels with my scene editor!
+
+
+I was using public variables... that is bad practice
+I made everything private with public gets and sets
+
+I also don't have a structure with hierarchy when I should've easily made one, and then I could even add things like color
+
+
+JSON AND LOADING?
+
+Json doesn't Support Polymorphism normally But They way I load my game levels is by taking an object array list that uses
+polymorphism to draw and apply collision methods, so I ran into a problem of saving and loading my objects.
+
+step 1) if a Json cant take polymorphism separate teh list and save and load the list and combine
+step 2) Make a levelData Container that organizes and stores my arraylist separately to reference from (this makes it clean and modular to break and add Objects later)
+step 3) save individually
+step 4) load individually then combine and return an arraylist of objects for my game
+
+===================== NOTES =================
+
+I'm tyring to figure out how I can make and test levels easily using the scene builder
+I have a few options
+
+option 1) I use the scene builder to reference for object position, size, and height and put that into a json file using gson
+
+options 2) I use scene builder as a level editor :)
+option 2 sounds more fun! but is a little different because you cannot put objects into a scenes with scene builder
+you may only put shapes in the canvas.
+to fix this I just make my own shapes/controls that extend from the shapes and store the positons just like my wall class
+ This way I can still identity different properties I want those shapes to have like a ball wall sandbox water-pool etc
+
+ step 1) figure out what I should make my parent for my wall class... Because I Want it to be placeable in teh fxml scene builder and I Want it to be able to be a shape
+ After some research I found that I need to make it extend off of "region" Region is a core class of fxml It handles creating controls and containers it's capable of
+ making buttons and more I use this because I want to bea ble to drag and move them a use positon and data form them. I also need the Wall class to be a Node so it
+ can be used in the canvas/Window
+
+became way more complicated than I needed but with the help of AI and some theory crafting I leaned that instead of trying
+to mke my own "shapes" I can instead just use the ones they have and dynamically track how many they are and make mirror
+objects of teh classes I use for my game logic
+
+ex: rectangles are walls
+ex: circle is sand trap
+ex: ellipse is water
+ex: check box is staring location (ie: ball location)
+ex: progress bottom is hole location.
+
+
+
+//////////////////////////////////////////
+
+progress
+
+Basic menu logic (DONE)
+Basic ball and control logic (DONE)
+Basic wall and obstacle logic (DONE)
+Basic Level Editor (DONE)
+User Level Editor (75%)
+Save file System (DONE)
+Full Menu System (80%)
+Score System (50%)
+
+// Note: I reVamped and Remade all my classes to all be children of Object class this cleans up my code for my running
+game function by making collision and drawing modular. it now uses polymorphism to achieve all its task. before this I
+had each class seperated and just had multiple loops running for my logic
+
+NOTE: I should only have one window for the game screen because if I have more than one game running I won't know what
+level to save from my save button
+
+or alternatively I can move my save button to The game screen and then I can save whatever level I want
+
+well we are changing things up my main menu will have a load level and score button on play it display score on edit it
+has a load level button while my edit screen shows controls and overall score throughout the whole game
+
+
+Dragging is so Cool in my edit mode it disables the bal movement, but instead you can drag and move objects around it
+basically checks to see if the mouse is sharing the same space as an object and if it is and It's still being dragged it
+changes that object location. also note that you can do this in my premade leaves but i will have to add some type of
+check on the save so if you click edit on a premade level it instead saves it as a custom level
+
+I used chatgpt to get the Focus screen I understand it has a game manager that controllers who's the focus and on touch it
+changes it and passes it to the menus related but i don't know they talk to each other I know its through an interface
+and listening

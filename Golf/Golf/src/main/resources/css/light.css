@@ -1,0 +1,39 @@
+.root {
+    -fx-background-color: #4CAF50; /* lush green grass */
+    -fx-text-fill: #ffffff;        /* white text for contrast */
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #8BC34A; /* lighter green */
+    -fx-text-fill: #1b5e20;        /* dark green text */
+    -fx-border-color: #33691e;     /* deep green border */
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #689f38; /* darker hover green */
+}
+
+/* TextFields */
+.text-field {
+    -fx-background-color: #C8E6C9; /* pale green like putting green */
+    -fx-text-fill: #1b5e20;        /* dark green text */
+    -fx-border-color: #33691e;
+    -fx-border-radius: 5;
+    -fx-prompt-text-fill: #689f38;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #A5D6A7; /* mid green */
+    -fx-control-inner-background: #A5D6A7;
+    -fx-text-fill: #1b5e20;
+}
+
+.tool-bar {
+    -fx-background-color: #A5D6A7;
+}

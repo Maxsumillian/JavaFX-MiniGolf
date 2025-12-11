@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<Pane fx:id="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.golf.LevelController">
+    <Canvas fx:id="levelCanvas" height="660.0" width="800" />
+    <ToolBar layoutY="660.0" maxHeight="40" minHeight="40" prefHeight="40.0" prefWidth="800.0">
+        <items>
+            <Button fx:id="Save" disable="true" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#Save" prefHeight="25.0" prefWidth="115.0" text=" 💾 Save Score" />
+            <TextField fx:id="NameField" disable="true" layoutX="138.0" layoutY="90.0" prefHeight="25.0" prefWidth="341.0" promptText="Enter Player Name: 'Currently In Development' " />
+        </items>
+    </ToolBar>
+    <ProgressIndicator layoutX="711.0" layoutY="450.0" progress="0.0" />
+    <CheckBox layoutX="35.0" layoutY="250.0" mnemonicParsing="false" text="CheckBox" />
+   <Circle fill="SANDYBROWN" layoutX="270.0" layoutY="350.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutX="28.0" layoutY="512.0" stroke="BLACK" strokeType="INSIDE" width="748.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="190.0" layoutY="225.0" stroke="BLACK" strokeType="INSIDE" width="436.0" />
+   <Circle fill="SANDYBROWN" layoutX="560.0" layoutY="350.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SANDYBROWN" height="200.0" layoutX="261.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" width="308.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="146.0" layoutX="386.0" layoutY="7.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+</Pane>

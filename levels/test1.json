@@ -1,0 +1,165 @@
+{
+  "rectangularObjects": [
+    {
+      "lenght": 100.0,
+      "height": 100.0,
+      "x": 79.0,
+      "y": 180.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "lenght": 243.0,
+      "height": 184.0,
+      "x": 367.0,
+      "y": 120.0,
+      "color": "#FFFFFF",
+      "objectType": "WALL"
+    },
+    {
+      "lenght": 45.0,
+      "height": 660.0,
+      "x": 755.0,
+      "y": 0.0,
+      "color": "#0000FF",
+      "objectType": "RESET"
+    },
+    {
+      "lenght": 756.0,
+      "height": 40.0,
+      "x": -1.0,
+      "y": 0.0,
+      "color": "#0000FF",
+      "objectType": "RESET"
+    },
+    {
+      "lenght": 165.0,
+      "height": 124.0,
+      "x": 610.0,
+      "y": 502.0,
+      "color": "#0000FF",
+      "objectType": "RESET"
+    }
+  ],
+  "ballObjects": [
+    {
+      "initialX": 60.0,
+      "initialY": 584.0,
+      "vx": 0.0,
+      "vy": 0.0,
+      "friction": 0.98,
+      "fricitonBase": 0.98,
+      "InHole": false,
+      "centerX": 50.0,
+      "centerY": 574.0,
+      "radius": 10.0,
+      "inTrap": false,
+      "x": 60.0,
+      "y": 584.0,
+      "color": "#FFFFFF",
+      "objectType": "BALL"
+    }
+  ],
+  "circularObjects": [
+    {
+      "centerX": 150.0,
+      "centerY": 484.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 250.0,
+      "y": 584.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 266.0,
+      "centerY": 345.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 366.0,
+      "y": 445.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 417.0,
+      "centerY": 237.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 586.0,
+      "y": 503.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 400.0,
+      "centerY": 14.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 500.0,
+      "y": 114.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 543.0,
+      "centerY": 122.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 574.0,
+      "y": 291.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 283.0,
+      "centerY": 114.0,
+      "radius": 9.0,
+      "inTrap": false,
+      "x": 215.0,
+      "y": 150.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 134.0,
+      "centerY": 222.0,
+      "radius": 94.00531899844816,
+      "inTrap": false,
+      "x": 234.0,
+      "y": 322.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": 14.0,
+      "centerY": 337.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 114.0,
+      "y": 437.0,
+      "color": "#F4A460",
+      "objectType": "TRAP"
+    },
+    {
+      "centerX": -100.0,
+      "centerY": -100.0,
+      "radius": 100.0,
+      "inTrap": false,
+      "x": 10.0,
+      "y": 32.0,
+      "color": "#0000FF",
+      "objectType": "RESET"
+    },
+    {
+      "centerX": 692.0,
+      "centerY": 48.0,
+      "radius": 20.0,
+      "inTrap": false,
+      "x": 712.0,
+      "y": 68.0,
+      "color": "#000000",
+      "objectType": "HOLE"
+    }
+  ]
+}

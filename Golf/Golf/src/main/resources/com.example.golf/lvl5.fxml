@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<Pane fx:id="root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.golf.LevelController">
+    <Canvas fx:id="levelCanvas" height="660.0" width="800" />
+    <ToolBar layoutY="660.0" maxHeight="40" minHeight="40" prefHeight="40.0" prefWidth="800.0">
+        <items>
+            <Button fx:id="Save" disable="true" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#Save" prefHeight="25.0" prefWidth="115.0" text=" 💾 Save Score" />
+            <TextField fx:id="NameField" disable="true" layoutX="138.0" layoutY="90.0" prefHeight="25.0" prefWidth="341.0" promptText="Enter Player Name: 'Currently In Development' " />
+        </items>
+    </ToolBar>
+    <ProgressIndicator layoutX="474.0" layoutY="560.0" progress="0.0" />
+    <CheckBox layoutX="76.0" layoutY="172.0" mnemonicParsing="false" text="CheckBox" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="383.0" layoutY="460.0" stroke="BLACK" strokeType="INSIDE" width="35.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="40.0" layoutX="381.0" layoutY="420.0" stroke="BLACK" strokeType="INSIDE" width="233.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="302.0" layoutX="430.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="366.0" />
+   <Circle fill="DODGERBLUE" layoutX="736.0" layoutY="600.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SANDYBROWN" height="200.0" layoutY="460.0" stroke="BLACK" strokeType="INSIDE" width="384.0" />
+   <Circle fill="DODGERBLUE" layoutX="292.0" layoutY="523.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="DODGERBLUE" layoutX="442.0" layoutY="293.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="DODGERBLUE" layoutX="53.0" layoutY="510.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="DODGERBLUE" layoutX="381.0" layoutY="433.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="DODGERBLUE" layoutX="179.0" layoutY="593.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" />
+   <Circle fill="DODGERBLUE" layoutX="738.0" layoutY="310.0" radius="62.0" stroke="BLACK" strokeType="INSIDE" />
+</Pane>
