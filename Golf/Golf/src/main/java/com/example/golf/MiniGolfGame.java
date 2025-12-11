@@ -66,9 +66,6 @@ public class MiniGolfGame extends Application {
     public static void main(String[] args) {
         makeFolder();
         launch();
-
-        System.out.println("TEST PRINT");
-
     }
     //Creates A Folder for levels if one is not Present
     public static void makeFolder() {
