@@ -102,9 +102,6 @@ public class MainMenuController implements GameManager.GameSelectionListener{
     }
 
     private void updateForGame(Game game) {
-
-//        System.out.println("focus Game has been changed");
-
         if (game.getStrokeCount() < 999999999){
             currentScore.setText(String.valueOf(game.getStrokeCount()));
         System.out.println(game);
