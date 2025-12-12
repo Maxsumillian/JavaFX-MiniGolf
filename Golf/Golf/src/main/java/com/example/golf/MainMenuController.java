@@ -73,9 +73,9 @@ public class MainMenuController implements GameManager.GameSelectionListener{
     }
 
 
-//    public void setCurrentScore(int score) {
-//        currentScore.setText(String.valueOf(score));
-//    }
+    public void setCurrentScore(int score) {
+        currentScore.setText(String.valueOf(score));
+    }
 
 
 /// ChatGPT assistance, use for my listening and active score counter
@@ -84,7 +84,11 @@ public class MainMenuController implements GameManager.GameSelectionListener{
 
     @FXML
     public void initialize() {
-        GameManager.setGameSelectionListener(this);
+        GameManager.addGameSelectionListener(this);
+
+//        soundControls.valueProperty().addListener((observable, oldValue, newValue) -> {
+//            updateSound(newValue);
+//        });
 
         // If a game is already active when the menu opens:
         if (GameManager.getActiveGame() != null) {

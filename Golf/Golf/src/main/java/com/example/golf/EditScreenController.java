@@ -112,7 +112,7 @@ public class EditScreenController  implements GameManager.GameSelectionListener{
     public void initialize() {
 
         //i need this to initialize the game selector listiner
-        GameManager.setGameSelectionListener(this);
+        GameManager.addGameSelectionListener(this);
 
 //        updateScoreTotal();
 

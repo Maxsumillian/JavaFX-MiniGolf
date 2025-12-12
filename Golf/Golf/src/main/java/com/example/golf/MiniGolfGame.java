@@ -74,7 +74,7 @@ public class MiniGolfGame extends Application {
     }
 
     //opens course levels for score tracking
-    public static void OpenLevel(String FilePath, String FileName) throws IOException {
+    public static void OpenLevel(String FilePath, @NotNull String FileName) throws IOException {
 
         Stage play = new Stage();
 
@@ -93,6 +93,7 @@ public class MiniGolfGame extends Application {
 
         //attaches a game reference to the controller
         controller.setGame(game);
+
 
         // gets the current hole
         controller.setCourseLevel(FileName.charAt(6)-48);
@@ -139,7 +140,6 @@ public class MiniGolfGame extends Application {
             }
         });
 
-
         if (darkMode) {
       scene.getStylesheets().add(Objects.requireNonNull(MiniGolfGame.class.getResource("/css/dark.css")).toExternalForm());
         }else{
@@ -153,7 +153,6 @@ public class MiniGolfGame extends Application {
                 GameManager.setActiveGame(game);
             }
         });
-
 
     }
 
@@ -194,6 +193,7 @@ public class MiniGolfGame extends Application {
             root.requestFocus();           // ensure key events go to this scene
             GameManager.setActiveGame(game); // your existing logic
         });
+
         scene.setOnMousePressed(e -> game.startDrag(e.getX(), e.getY()));
         scene.setOnMouseDragged(e -> game.updateDrag(e.getX(), e.getY()));
         scene.setOnMouseReleased(e -> game.endDrag());
@@ -313,7 +313,6 @@ public class MiniGolfGame extends Application {
         });
 
     }
-
 
     public static void OpenEditor() throws IOException {
 
